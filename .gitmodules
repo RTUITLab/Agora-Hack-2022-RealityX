@@ -1,0 +1,9 @@
+[submodule "proxy"]
+	path = proxy
+	url = https://github.com/AlexGeniusMan/Agora-Hack-2022-RealityX-Proxy
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/AlexGeniusMan/Agora-Hack-2022-RealityX-Frontend
+[submodule "backend"]
+	path = backend
+	url = https://github.com/AlexGeniusMan/Agora-Hack-2022-RealityX-Backend
