@@ -1,16 +1,16 @@
 version: '3.7'
 
 services:
-#  proxy:
-#    build:
-#      context: ./proxy
-#    ports:
-#      - ${PROXY_PORT}:8080
-#    volumes:
-#      - ./:/usr/src/project
-#      - backend_static_django:/usr/src/project/static_django
-#    depends_on:
-#      - backend
+  proxy:
+    build:
+      context: ./proxy
+    ports:
+      - ${PROXY_PORT}:8080
+    volumes:
+      - ./:/usr/src/project
+      - backend_static_django:/usr/src/project/static_django
+    depends_on:
+      - backend
 #      - frontend
 #  frontend:
 #    build:
