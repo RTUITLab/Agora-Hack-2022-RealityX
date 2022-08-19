@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   proxy:
-    image: mr_proxy
+    image: agora_proxy
     ports:
       - ${PROXY_PORT}:8080
     volumes:
@@ -12,9 +12,9 @@ services:
       - backend
 #      - frontend
 #  frontend:
-#    image: mr_frontend
+#    image: agora_frontend
   backend:
-    image: mr_backend
+    image: agora_backend
     volumes:
       - ./media/:/usr/src/project/media/
 #      - backend_sqlite:/usr/src/project/db.sqlite3
