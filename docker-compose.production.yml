@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+#  proxy:
+#    image: mr_proxy
+#    ports:
+#      - ${PROXY_PORT}:8080
+#    volumes:
+#      - ./:/usr/src/project
+#      - backend_static_django:/usr/src/project/static_django
+#    depends_on:
+#      - backend
+#      - frontend
+#  frontend:
+#    image: mr_frontend
+  backend:
+    image: mr_backend
+    volumes:
+      - ./media/:/usr/src/project/media/
+#      - backend_sqlite:/usr/src/project/db.sqlite3
+      - ./logs/backend/:/usr/src/project/logs/
+      - backend_static_django:/usr/src/project/static_django/
+    environment:
+      # --- Core Backend ---
+      # - Main
+      BACKEND_DEBUG_MODE: ${CORE_BACKEND_DEBUG_MODE}
+      BACKEND_SECRET_KEY: ${CORE_BACKEND_SECRET_KEY}
+      BACKEND_ALLOWED_HOSTS: ${CORE_BACKEND_ALLOWED_HOSTS}
+      BACKEND_DEFAULT_DB: ${CORE_BACKEND_DEFAULT_DB}
+      # - Default user
+      DJANGO_SUPERUSER_USERNAME: ${CORE_BACKEND_SUPERUSER_USERNAME}
+      DJANGO_SUPERUSER_EMAIL: ${CORE_BACKEND_SUPERUSER_EMAIL}
+      DJANGO_SUPERUSER_PASSWORD: ${CORE_BACKEND_SUPERUSER_PASSWORD}
+      # --- Database ---
+      # - Main
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+volumes:
+  backend_static_django:
+  postgres_data:
