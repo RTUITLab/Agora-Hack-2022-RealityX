@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           port: "22"
           source: "docker-compose.production.yml"
-          target: "agora"
+          target: "/home/agora"
 
       - name: Deploy stack
         uses: appleboy/ssh-action@v0.1.4
