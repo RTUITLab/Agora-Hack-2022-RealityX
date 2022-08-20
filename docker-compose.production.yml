@@ -10,14 +10,13 @@ services:
       - backend_static_django_agora:/usr/src/project/static_django
     depends_on:
       - backend
-#      - frontend
-#  frontend:
-#    image: agora_frontend
+      - frontend
+  frontend:
+    image: agora_frontend
   backend:
     image: agora_backend
     volumes:
       - ./media/:/usr/src/project/media/
-#      - backend_sqlite:/usr/src/project/db.sqlite3
       - ./logs/backend/:/usr/src/project/logs/
       - backend_static_django_agora:/usr/src/project/static_django/
     environment:
