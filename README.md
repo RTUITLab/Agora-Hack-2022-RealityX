@@ -49,13 +49,13 @@ DB_PASSWORD=Alpine12
 4. Change frontend/.env file:
 
 ```
-VUE_APP_BASE_URL=http://127.0.0.1:8777/
+VUE_APP_BASE_URL=http://127.0.0.1:8777/api
 ```
 
 5. Launch with Docker Compose:
 
 ```
-docker-compose up
+docker-compose down ; docker-compose up --build
 ```
 
 > Done! Project launched.
