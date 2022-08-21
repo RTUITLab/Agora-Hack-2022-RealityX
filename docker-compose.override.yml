@@ -11,16 +11,10 @@ services:
       - backend_static_django:/usr/src/project/static_django
     depends_on:
       - backend
-#      - frontend
-#  frontend:
-#    build:
-#      context: ./frontend
-#    environment:
-#      # --- Frontend ---
-#      # - Main
-#      FRONTEND_PRODUCTION_URL: ${FRONTEND_API_URL}
-#    ports:
-#      - "8010:80"
+      - frontend
+  frontend:
+    build:
+      context: ./frontend
   backend:
     build:
       context: ./backend
