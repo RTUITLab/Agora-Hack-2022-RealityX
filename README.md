@@ -14,10 +14,6 @@
 ```
 git clone https://github.com/AlexGeniusMan/Agora-Hack-2022-RealityX project --recursive
 cd project
-
-[//]: # (git submodule init)
-
-[//]: # (git submodule update)
 ```
 
 3. Create .env file and add secrets to it:
