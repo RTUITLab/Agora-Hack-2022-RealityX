@@ -58,4 +58,4 @@ VUE_APP_BASE_URL=http://127.0.0.1:8777/api
 docker-compose down ; docker-compose up --build
 ```
 
-> Done! Project launched.
+> Done! Project launched on 8777 port.
